@@ -1,0 +1,21 @@
+log:
+    log_dir: ./log
+    log_name: xrtcserver
+    # verbose debug info warning error
+    log_level: verbose
+    log_to_stderr: true
+
+rtc:
+    worker_num: 2
+    candidate_ip: 1.14.148.67
+
+ice:
+   min_port: 10025
+   max_port: 65535
+
+signaling:
+    host_ip: 127.0.0.1
+    port: 9000
+    worker_num: 2
+    #单位毫秒
+    connection_timeout: 5000
