@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html> 
+<head>
+    <meta charset="utf-8">
+    <title>xrtc推拉流系统</title>
+    <style type="text/css">
+        body {
+            font-size: 15px;
+        }
+        .highlight {
+            background-color: #eeeeee;
+            margin:0 0 5px 0;
+            padding: 0.5em 1.5em;
+        }
+
+        video {
+            width: 480px;
+            height: 360px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 2px;
+            color: white;
+            margin: 5px 0 0 0;
+            padding: 0.5em 0.7em 0.6em 0.7em; 
+            width: 80px;
+        }
+
+        button:hover {
+            background-color: #0768f8;
+        }
+    
+        button:disabled {
+	        opacity: 0.6;
+	        cursor: not-allowed;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h2>xrtc推拉流系统</h2>
+    <div>
+        <div class="push" style="float:left;">
+            <h3>推流：</h3>
+            <form>
+                推流选项：
+                <input type="radio" name="select" id="pushScreenRadio" checked="checked" /> 推流屏幕
+                <input type="radio" name="select" id="pushCameraRadio" /> 推流摄像头
+            </form>
+            uid:
+            <input id="pushUid" value="111">
+            流id:
+            <input id="pushStreamName" value="xrtc1">
+            <input type="checkbox" id="audioCheckbox" checked="checked">音频</input>
+        
+            <div style="margin-top:5px">
+                <video id="localVideo" autoplay controls></video>
+            </div>
+        
+            <button id="startPushBtn">开始推流</button>
+            <button id="stopPushBtn">停止推流</button>
+        
+            <div class="highlight">
+                <span id="pushTips1"></span> <br>
+                <span id="pushTips2"></span> <br>
+                <span id="pushTips3"></span>
+            </div>
+        </div>
+        
+        <div class="pull" style="float:left;margin-left:30px;">
+            <h3>拉流：</h3>
+            <br/>
+            uid:
+            <input id="pullUid" value="666">
+            流id:
+            <input id="pullStreamName" value="xrtc1">
+              
+            <div style="margin-top:5px">
+                <video id="remoteVideo" autoplay controls></video>
+            </div>
+        
+            <button id="startPullBtn">开始拉流</button>
+            <button id="stopPullBtn">停止拉流</button>
+        
+            <div class="highlight">
+                <span id="pullTips1"></span> <br>
+                <span id="pullTips2"></span> <br>
+                <span id="pullTips3"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/jquery-2.1.1.min.js"></script>
+    <script src="/static/js/adapter-latest.js"></script>
+    <script src="/static/js/pull.js"></script>
+    <script src="/static/js/push.js"></script>
+</body>
+
+</html>
